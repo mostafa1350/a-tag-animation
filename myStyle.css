@@ -189,4 +189,58 @@ body{
      .rotateBckgrnd:hover{
         color: #fffb01;
      }
+
+     /* ------- ZoominOut ----------- */
+     .ZoominOut{
+        margin-top: 20px;
+        padding: 10px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: transparent;
+        border: 4px solid #f2faff;
+        border-radius: 5px;
+        font-size: 30px;
+        position: relative;
+
+     }
+     .ZoominOut::before{
+        content: "Zoom In Zoom Out";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position:absolute ;
+        color: #93e1f5;
+        background-color: blueviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .4s;
+
+     }
+     .ZoominOut:hover::before{
+        left: 100%;
+        transform: scale(0) rotateZ(360deg);
+     }
+     .ZoominOut::after{
+        content: "Zoom In Zoom Out";
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        position:absolute ;
+        color: #93e1f5;
+        background-color: blueviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .4s;
+        transform: scale(0) rotateZ(0deg);
+        opacity: 0;
+     }
+     .ZoominOut:hover::after{
+        left: 0; /*back to the origin place */
+        transform: scale(1) rotateZ(360deg);
+        opacity: 1; /*back to the origin opacity */
+     }
      
